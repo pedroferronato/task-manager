@@ -1,7 +1,16 @@
-:root{
-    --cor-button-ok: #47E73B;
+:root {
     --cor-primary: #FEFEFE;
     --cor--text-white: #FFFFFF;
+    --light-card-background: #fefefe;
+    --primary-action-color: #47E73B;
+    --primary-action-color-hover: #3ed433;
+    --primary-action-color-active: #18cc0b;
+    --input-border-color: #444444;
+    --input-color: #535353;
+    --input-background-color: #f5f5f5;
+    --title-font: 28px;
+    --body-font: 18px;
+    --margin-bottom: 20px;
 }
 
 *{
@@ -11,6 +20,9 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
 
+}
+header{
+    font-weight: 600;
 }
 
 body{
@@ -46,7 +58,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--cor-button-ok);
+    background: var(--primary-action-color);
     color: var(--cor--text-white);
     border-radius: 0px 50px 50px 0px;    
     width: 150px;
@@ -58,4 +70,10 @@ body{
 .button-add-task:hover{
     box-shadow: inset 150px 0 0 0 #959595;
     cursor: pointer;
+}
+
+.flex-space-between-align-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
