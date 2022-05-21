@@ -1,0 +1,43 @@
+.task-card {
+    background-color: var(--light-card-background);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.task-title {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.task-date {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.task-description {
+    font-size: 18px;
+    line-height: 24px;
+    color: #5c5c5c;
+    word-break: break-all;
+}
+
+.border-planned {
+    border-bottom: 8px var(--planned-color) solid;
+}
+.border-doing {
+    border-bottom: 8px var(--doing-color) solid;
+}
+.border-review {
+    border-bottom: 8px var(--review-color) solid;
+}
+.border-done {
+    border-bottom: 8px var(--done-color) solid;
+}

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/modal-style.css">
     <link rel="stylesheet" href="css/check.css">
     <link rel="stylesheet" href="css/drag-and-drop.css">
+    <link rel="stylesheet" href="css/tasks.css">
     <title>Task manager</title>
 </head>
 
@@ -33,20 +34,20 @@
     <main>
         <div class="content">
             <div class="status-column">
-                <h1>ToDo</h1>
-                <div class="dropzone"></div>
+                <h1 class="column-title">Planejadas</h1>
+                <div class="dropzone" id="planned-column"></div>
             </div>
             <div class="status-column">
-                <h1>Doing</h1>
-                <div class="dropzone"></div>
+                <h1 class="column-title">Executando</h1>
+                <div class="dropzone" id="doing-column"></div>
             </div>
             <div class="status-column">
-                <h1>In Review</h1>
-                <div class="dropzone"></div>
+                <h1 class="column-title">Rever</h1>
+                <div class="dropzone" id="review-column"></div>
             </div>
             <div class="status-column">
-                <h1>Done</h1>
-                <div class="dropzone"></div>
+                <h1 class="column-title">Feito</h1>
+                <div class="dropzone" id="done-column"></div>
             </div>
         </div>
     </main>
@@ -99,5 +100,7 @@
 <script src="scripts/scripts.js"></script>
 <script src="scripts/drag-and-drop.js"></script>
 <script src="scripts/modal.js"></script>
+<script src="scripts/task-render.js"></script>
+<script src="scripts/notification.js"></script>
 
 </html>

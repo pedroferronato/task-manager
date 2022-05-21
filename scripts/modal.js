@@ -19,6 +19,18 @@ function changeModalDisplay(event) {
     }
 }
 
+function loadDate() {
+    let dateNow = Date.now()
+
+    let options = {
+        dateStyle: 'short',
+        timeStyle: 'short'
+    }
+
+    let dateLocalFormat = new Intl.DateTimeFormat('pt-br', options).format(dateNow)
+    date.value = dateLocalFormat;
+}
+
 function checkClass() {
     if (modalFade.classList.contains('modal-invisible')) {
         switchClass('modal-invisible', 'modal-visible')
@@ -28,6 +40,7 @@ function checkClass() {
 }
 
 function switchClass(oldClass, newClass) {
+    loadDate()
     modalFade.classList.remove(oldClass)
     modalFade.classList.add(newClass)
 }
@@ -76,7 +89,6 @@ function saveNewTask() {
         state: state
     })
 
-
     if (newTask) {
         const nextId = Number(localStorage.lastId) + 1
 
@@ -92,5 +104,7 @@ function saveNewTask() {
         tasks.push(newTask)
 
         localStorage.tasks = JSON.stringify(tasks)
+
+        location.reload()
     }
 }
