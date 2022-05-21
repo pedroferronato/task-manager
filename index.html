@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal-style.css">
@@ -28,6 +29,10 @@
             <div class="modal-field modal-margin-bottom">
                 <label class="modal-label" for="task-title">Título: *</label>
                 <input class="modal-input" type="text" id="task-title">
+            </div>
+            <div class="modal-field modal-margin-bottom">
+                <label class="modal-label" for="task-date">Data: *</label>
+                <input class="modal-input" type="datetime" id="task-date">
             </div>
             <div class="modal-field modal-margin-bottom">
                 <label class="modal-label" for="task-description">Descrição:</label>
@@ -57,12 +62,11 @@
                     </label>
                 </div>
             </div>
-            <button class="modal-button modal-button-confirm">Adicionar tarefa</button>
+            <button id="add-task-button" class="modal-button modal-button-confirm">Adicionar tarefa</button>
         </div>
     </div>
 </body>
 <script src="scripts/scripts.js"></script>
 <script src="scripts/drag-and-drop.js"></script>
 <script src="scripts/modal.js"></script>
-
 </html>
