@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  height: 100vh;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 16px;
+}
+
+.status-column {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 8px;
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dropzone.dragover {
+  background: #bbb;
+}
+
+.drag-item {
+  background: #faffff;
+  padding: 16px;
+  cursor:grab;
+}
+
+.dragging {
+  opacity: .9;
+}
+

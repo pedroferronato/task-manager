@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal-style.css">
     <link rel="stylesheet" href="css/check.css">
+    <link rel="stylesheet" href="css/drag-and-drop.css">
     <title>Task manager</title>
 </head>
 
@@ -30,8 +31,26 @@
         </div>
     </header>
 <main>
+      <div class="content">
+        <div class="status-column">
+          <h1>ToDo</h1>
+          <div class="dropzone"></div>
+        </div>
+        <div class="status-column">
+          <h1>Doing</h1>
+          <div class="dropzone"></div>
+        </div>
+        <div class="status-column">
+          <h1>In Review</h1>
+          <div class="dropzone"></div>
+        </div>
+        <div class="status-column">
+          <h1>Done</h1>
+          <div class="dropzone"></div>
+        </div>
+      </div>
     <button id="new-task-button" class="modal-button modal-button-confirm">Nova tarefa</button>
-    <div class="modal-fade modal-visible" id="modal-fade">
+    <div class="modal-fade modal-invisible" id="modal-fade">
         <div class="modal-body">
             <div class="flex-space-between-align-center modal-margin-bottom">
                 <h1 class="modal-title">Nova Tarefa</h1>
@@ -78,10 +97,7 @@
     </div>
   </main>
 </body>
-<footer>
-    <script src="scripts/scripts.js"></script>
-    <script src="scripts/drag-and-drop.js"></script>
-    <script src="scripts/modal.js"></script>
-</footer>
-
+<script src="scripts/scripts.js"></script>
+<script src="scripts/drag-and-drop.js"></script>
+<script src="scripts/modal.js"></script>
 </html>
