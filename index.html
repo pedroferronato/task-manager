@@ -1,18 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal-style.css">
+    <link rel="stylesheet" href="css/check.css">
     <title>Task manager</title>
 </head>
+
 <body>
-    <h1>hello</h1>
+    <button id="new-task-button" class="modal-button modal-button-confirm">Nova tarefa</button>
+    <div class="modal-fade modal-visible" id="modal-fade">
+        <div class="modal-body">
+            <h1 class="modal-title modal-margin-bottom">Nova Tarefa</h1>
+            <div class="modal-field modal-margin-bottom">
+                <label class="modal-label" for="task-title">Título:</label>
+                <input class="modal-input" type="text" id="task-title">
+            </div>
+            <div class="modal-field modal-margin-bottom">
+                <label class="modal-label" for="task-description">Descrição:</label>
+                <textarea class="modal-input" id="task-description"></textarea>
+            </div>
+            <div class="modal-field modal-button-spacing">
+                <label class="modal-label modal-margin-bottom">Qual é o estado da tarefa?:</label>
+                <div class="modal-state-options">
+                    <label class="container">Planejadas
+                        <input type="radio" id="planned" value="planned" name="task-state" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Executando
+                        <input type="radio" id="doing" value="doing" name="task-state">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Rever
+                        <input type="radio" id="review" value="review" name="task-state">
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="container">Feito
+                        <input type="radio" id="done" value="done" name="task-state">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <button class="modal-button modal-button-confirm">Adicionar tarefa</button>
+        </div>
+    </div>
 </body>
 <script src="scripts/scripts.js"></script>
 <script src="scripts/drag-and-drop.js"></script>
 <script src="scripts/modal.js"></script>
+
 </html>
