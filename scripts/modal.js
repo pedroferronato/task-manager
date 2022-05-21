@@ -2,6 +2,7 @@ const newTaskButton = document.getElementById('new-task-button')
 const modalFade = document.getElementById('modal-fade')
 const closeIcon = document.getElementById('modal-close-icon')
 const addTaskButton = document.getElementById('add-task-button')
+const newTaskText = document.getElementById('new-task-text')
 
 newTaskButton.addEventListener('click', changeModalDisplay)
 modalFade.addEventListener('click', changeModalDisplay)
@@ -11,7 +12,8 @@ function changeModalDisplay(event) {
     if (
         event.target.id === modalFade.id ||
         event.target.id === newTaskButton.id ||
-        event.target.id === closeIcon.id
+        event.target.id === closeIcon.id ||
+        event.target.id === newTaskText.id
     ) {
         checkClass()
     }

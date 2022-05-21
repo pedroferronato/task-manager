@@ -27,6 +27,7 @@ header{
 
 body{
     background: var(--cor-primary);
+    font-family: 'Quicksand', sans-serif;
 }
 
 .stripe-task {
