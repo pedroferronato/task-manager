@@ -1,4 +1,6 @@
 :root {
+    --cor-primary: #FEFEFE;
+    --cor--text-white: #FFFFFF;
     --light-card-background: #fefefe;
     --primary-action-color: #47E73B;
     --primary-action-color-hover: #3ed433;
@@ -11,8 +13,63 @@
     --margin-bottom: 20px;
 }
 
-body {
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+
+}
+header{
+    font-weight: 600;
+}
+
+body{
+    background: var(--cor-primary);
+}
+
+.stripe-task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 22px;
+    min-height: 56px;
+}
+
+.stripe-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FEFEFE;
+    width: 50%;
+    box-shadow: 0px 0px 16px rgba(190, 224, 250, 0.75);
+    border-radius: 50px 0px 0px 50px;
+}
+
+.stripe-title h2{
+    font-size: 24px;
+    margin-left: 28px;
+    width: 100%;
+    
+}
+
+.button-add-task {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--primary-action-color);
+    color: var(--cor--text-white);
+    border-radius: 0px 50px 50px 0px;    
+    width: 150px;
+    text-align: center;
+    transition: color .4s ease-in-out, box-shadow .3s ease-in-out
+
+}
+
+.button-add-task:hover{
+    box-shadow: inset 150px 0 0 0 #959595;
+    cursor: pointer;
 }
 
 .flex-space-between-align-center {
