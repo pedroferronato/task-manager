@@ -99,6 +99,23 @@
     width: 100%;
     max-width: 500px;
     display: grid;
+    row-gap: 20px;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+}
+
+.modal-text-area {
+    height: 120px;
+}
+
+.modal-icon {
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1366px) {
+    .modal-text-area {
+        height: 80px;
+    }
 }

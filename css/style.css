@@ -14,3 +14,9 @@
 body {
     font-family: 'Quicksand', sans-serif;
 }
+
+.flex-space-between-align-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
