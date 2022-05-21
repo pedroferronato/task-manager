@@ -35,7 +35,7 @@
 
 .modal-label {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 4px;
 }
 
@@ -52,6 +52,7 @@
     color: var(--input-color);
     border-bottom: 2px solid var(--input-border-color);
     background-color: var(--input-background-color);
+    padding-left: 8px;
 }
 
 .modal-margin-bottom {
@@ -92,7 +93,7 @@
 
 .state-option-label {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .modal-state-options {
