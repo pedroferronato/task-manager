@@ -4,9 +4,21 @@ function createTaskCardElement(task) {
     taskCardElement.id = task.id
     taskCardElement.draggable  = true
 
+    const taskTop = document.createElement('div')
+    taskTop.classList.add('flex-space-between-align-center')
+
     const taskTitle = document.createElement('h1')
     taskTitle.innerHTML = `#${task.id} - ${task.title}`
     taskTitle.className = 'task-title'
+
+    const taskDelete = document.createElement('span')
+    taskDelete.innerHTML = 'close'
+    taskDelete.classList.add('material-symbols-outlined')
+    taskDelete.classList.add('task-delete')
+    taskDelete.addEventListener('click', () => {deleteTask(task.id, taskCardElement)})
+
+    taskTop.appendChild(taskTitle)
+    taskTop.appendChild(taskDelete)
 
     const taskDescription = document.createElement('p')
     taskDescription.innerHTML = task.description
@@ -16,7 +28,7 @@ function createTaskCardElement(task) {
     taskDate.className = 'task-date'
     taskDate.innerHTML = task.date
 
-    taskCardElement.appendChild(taskTitle)
+    taskCardElement.appendChild(taskTop)
     taskCardElement.appendChild(taskDescription)
     taskCardElement.appendChild(taskDate)
 
@@ -60,4 +72,15 @@ function loadTask() {
             doneTasks.appendChild(taskElement)
         }
     })
+}
+
+function deleteTask(id, card) {
+    let currentTasks = JSON.parse(localStorage.tasks)
+    const task = currentTasks.find((task) => task.id === id)
+    const index = currentTasks.indexOf(task)
+
+    currentTasks.splice(index, 1)
+    localStorage.tasks = JSON.stringify(currentTasks)
+
+    card.remove()
 }
