@@ -15,7 +15,7 @@ function createTaskCardElement(task) {
     taskDelete.innerHTML = 'close'
     taskDelete.classList.add('material-symbols-outlined')
     taskDelete.classList.add('task-delete')
-    taskDelete.addEventListener('click', () => {deleteTask(task.id, taskCardElement)})
+    taskDelete.addEventListener('click', () => { deleteTask(task.id, taskCardElement) })
 
     taskTop.appendChild(taskTitle)
     taskTop.appendChild(taskDelete)
@@ -75,12 +75,14 @@ function loadTask() {
 }
 
 function deleteTask(id, card) {
-    let currentTasks = JSON.parse(localStorage.tasks)
-    const task = currentTasks.find((task) => task.id === id)
-    const index = currentTasks.indexOf(task)
-
-    currentTasks.splice(index, 1)
-    localStorage.tasks = JSON.stringify(currentTasks)
-
-    card.remove()
+    if (confirm(`Deseja realmente excluir a tarefa #${id}`)) {
+        let currentTasks = JSON.parse(localStorage.tasks)
+        const task = currentTasks.find((task) => task.id === id)
+        const index = currentTasks.indexOf(task)
+    
+        currentTasks.splice(index, 1)
+        localStorage.tasks = JSON.stringify(currentTasks)
+    
+        card.remove()
+    }
 }
