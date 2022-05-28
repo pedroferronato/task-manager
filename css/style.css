@@ -1,5 +1,5 @@
 :root {
-    --cor-primary: #FEFEFE;
+
     --cor--text-white: #FFFFFF;
     --light-card-background: #fefefe;
     --primary-action-color: #47E73B;
@@ -48,7 +48,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #FEFEFE;
+    background: var(--light-card-background);
     width: 50%;
     box-shadow: 0px 0px 16px rgba(190, 224, 250, 0.75);
     border-radius: 50px 0px 0px 50px;
@@ -57,8 +57,6 @@ body{
 .stripe-title h2{
     font-size: 24px;
     margin-left: 28px;
-    width: 100%;
-    
 }
 
 .button-add-task {
@@ -83,4 +81,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.align-items-right {
+    justify-content: end !important;
+}
+
+.width-min{
+    min-width: 356px !important;
 }

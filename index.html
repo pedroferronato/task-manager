@@ -24,14 +24,13 @@
     <header>
         <div class="stripe-task">
             <div class="stripe-title">
-                <h2>Task manager</h2>
+                <h2>Gerenciador de tarefas</h2>
             </div>
             <div type="button" class="button-add-task" id="new-task-button">
-                <h3 id="new-task-text">New task</h3>
+                <h3 id="new-task-text">Nova tarefa</h3>
             </div>
         </div>
     </header>
-    <main>
         <div class="content">
             <div class="status-column">
                 <h1 class="column-title">Planejadas</h1>
@@ -50,57 +49,66 @@
                 <div class="dropzone" id="done-column"></div>
             </div>
         </div>
-    </main>
-    <div class="modal-fade modal-invisible" id="modal-fade">
-        <div class="modal-body">
-            <div class="flex-space-between-align-center modal-margin-bottom">
-                <h1 class="modal-title">Nova Tarefa</h1>
-                <span class="material-symbols-outlined modal-icon" id="modal-close-icon">close</span>
-            </div>
-            <div class="modal-field modal-margin-bottom">
-                <label class="modal-label" for="task-title">Título: *</label>
-                <input class="modal-input" type="text" id="task-title">
-            </div>
-            <div class="modal-field modal-margin-bottom">
-                <label class="modal-label" for="task-date">Data: *</label>
-                <input class="modal-input" type="datetime" id="task-date">
-            </div>
-            <div class="modal-field modal-margin-bottom">
-                <label class="modal-label" for="task-description">Descrição:</label>
-                <textarea class="modal-input modal-text-area" id="task-description"></textarea>
-            </div>
-            <div class="modal-field modal-button-spacing">
-                <label class="modal-label modal-margin-bottom">Qual é o estado da tarefa?</label>
-                <div class="modal-state-options">
-                    <label class="container">Planejadas
-                        <input type="radio" id="planned" value="planned" name="task-state" checked="checked">
-                        <span class="checkmark"></span>
-                    </label>
 
-                    <label class="container">Executando
-                        <input type="radio" id="doing" value="doing" name="task-state">
-                        <span class="checkmark"></span>
-                    </label>
-
-                    <label class="container">Rever
-                        <input type="radio" id="review" value="review" name="task-state">
-                        <span class="checkmark"></span>
-                    </label>
-
-                    <label class="container">Feito
-                        <input type="radio" id="done" value="done" name="task-state">
-                        <span class="checkmark"></span>
-                    </label>
+        <div class="modal-fade modal-invisible" id="modal-fade">
+            <div class="modal-body">
+                <div class="flex-space-between-align-center modal-margin-bottom">
+                    <h1 class="modal-title">Nova Tarefa</h1>
+                    <span class="material-symbols-outlined modal-icon" id="modal-close-icon">close</span>
                 </div>
+                <div class="modal-field modal-margin-bottom">
+                    <label class="modal-label" for="task-title">Título: *</label>
+                    <input class="modal-input" type="text" id="task-title">
+                </div>
+                <div class="modal-field modal-margin-bottom">
+                    <label class="modal-label" for="task-date">Data: *</label>
+                    <input class="modal-input" type="datetime" id="task-date">
+                </div>
+                <div class="modal-field modal-margin-bottom">
+                    <label class="modal-label" for="task-description">Descrição:</label>
+                    <textarea class="modal-input modal-text-area" id="task-description"></textarea>
+                </div>
+                <div class="modal-field modal-button-spacing">
+                    <label class="modal-label modal-margin-bottom">Qual é o estado da tarefa?</label>
+                    <div class="modal-state-options">
+                        <label class="container">Planejadas
+                            <input type="radio" id="planned" value="planned" name="task-state" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <label class="container">Executando
+                            <input type="radio" id="doing" value="doing" name="task-state">
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <label class="container">Rever
+                            <input type="radio" id="review" value="review" name="task-state">
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <label class="container">Feito
+                            <input type="radio" id="done" value="done" name="task-state">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <button id="add-task-button" class="modal-button modal-button-confirm">Adicionar tarefa</button>
             </div>
-            <button id="add-task-button" class="modal-button modal-button-confirm">Adicionar tarefa</button>
         </div>
-    </div>
+
+        <div class="modal-fade modal-invisible " id="modal-notification">
+            <div class="task-card width-min" id="modal-notification-boby">
+                <div class="flex-space-between-align-center modal-margin-bottom align-items-right">
+                    <span class="material-symbols-outlined modal-icon" id="modal-notificaion-close-icon">close</span>
+                </div>
+                
+            </div>
+        </div>
 </body>
 <script src="scripts/scripts.js"></script>
 <script src="scripts/drag-and-drop.js"></script>
 <script src="scripts/modal.js"></script>
 <script src="scripts/task-render.js"></script>
-<script src="scripts/notification.js"></script>
+<!--  --><script src="scripts/notification.js"></script>
 
 </html>
