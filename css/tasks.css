@@ -29,6 +29,12 @@
     word-break: break-all;
 }
 
+.task-delete {
+    font-weight: 700;
+    color: rgb(235, 63, 63);
+    cursor: pointer;
+}
+
 .border-planned {
     border-bottom: 8px var(--planned-color) solid;
 }
