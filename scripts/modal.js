@@ -3,9 +3,11 @@ const modalFade = document.getElementById('modal-fade')
 const closeIcon = document.getElementById('modal-close-icon')
 const addTaskButton = document.getElementById('add-task-button')
 const newTaskText = document.getElementById('new-task-text')
+const floatingButtonAddTask = document.getElementById('floating-button-add-task')
 
 newTaskButton.addEventListener('click', changeModalDisplay)
 modalFade.addEventListener('click', changeModalDisplay)
+floatingButtonAddTask.addEventListener('click', changeModalDisplay)
 addTaskButton.addEventListener('click', saveNewTask)
 
 function changeModalDisplay(event) {
@@ -13,7 +15,8 @@ function changeModalDisplay(event) {
         event.target.id === modalFade.id ||
         event.target.id === newTaskButton.id ||
         event.target.id === closeIcon.id ||
-        event.target.id === newTaskText.id
+        event.target.id === newTaskText.id ||
+        event.target.id === floatingButtonAddTask.id 
     ) {
         checkClass()
     }

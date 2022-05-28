@@ -17,10 +17,14 @@
     <link rel="stylesheet" href="css/check.css">
     <link rel="stylesheet" href="css/drag-and-drop.css">
     <link rel="stylesheet" href="css/tasks.css">
+    <link rel="stylesheet" href="css/notification.css">
     <title>Task manager</title>
 </head>
 
 <body>
+    <div type="button" class="floating-button-add-task" id="floating-button-add-task">
+        <h3 id="new-task-text">+</h3>
+    </div>
     <header>
         <div class="stripe-task">
             <div class="stripe-title">
@@ -52,7 +56,7 @@
 
         <div class="modal-fade modal-invisible" id="modal-fade">
             <div class="modal-body">
-                <div class="flex-space-between-align-center modal-margin-bottom">
+                <div class="flex-space-between-align-center modal-margin-bottom modal-title-div">
                     <h1 class="modal-title">Nova Tarefa</h1>
                     <span class="material-symbols-outlined modal-icon" id="modal-close-icon">close</span>
                 </div>
@@ -97,11 +101,10 @@
         </div>
 
         <div class="modal-fade modal-invisible " id="modal-notification">
-            <div class="task-card width-min" id="modal-notification-boby">
-                <div class="flex-space-between-align-center modal-margin-bottom align-items-right">
-                    <span class="material-symbols-outlined modal-icon" id="modal-notificaion-close-icon">close</span>
+            <div class="task-card width-min margin-bottom-0px" id="modal-notification-boby">
+                <div class="flex-space-between-align-center align-items-right" >
+                    <span class="material-symbols-outlined modal-icon" id="modal-notification-close-icon">close</span>
                 </div>
-                
             </div>
         </div>
 </body>
@@ -109,6 +112,7 @@
 <script src="scripts/drag-and-drop.js"></script>
 <script src="scripts/modal.js"></script>
 <script src="scripts/task-render.js"></script>
-<!--  --><script src="scripts/notification.js"></script>
+<script src="scripts/notification.js"></script>
+
 
 </html>

@@ -38,12 +38,15 @@
 .border-planned {
     border-bottom: 8px var(--planned-color) solid;
 }
+
 .border-doing {
     border-bottom: 8px var(--doing-color) solid;
 }
+
 .border-review {
     border-bottom: 8px var(--review-color) solid;
 }
+
 .border-done {
     border-bottom: 8px var(--done-color) solid;
 }

@@ -115,6 +115,44 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 880px) {
+    .modal-body {
+        height: 95%;
+        margin: 0;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .modal-title-div {
+        width: 100%;
+    }
+
+    .modal-input {
+        max-width: 400px;
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .modal-button-spacing {
+        margin-bottom: 20px;
+    }
+
+    .modal-margin-bottom {
+        margin-bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .modal-input {
+        max-width: 280px;
+        min-width: 280px;
+    }
+}
+
 @media screen and (max-width: 1366px) {
     .modal-text-area {
         height: 80px;

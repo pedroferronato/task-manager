@@ -14,13 +14,13 @@ document.addEventListener('dragover', event => {
 }, false)
 
 document.addEventListener('dragenter', event => {
-    if (event.target.classList.contains('dropzone')) {
+    if (event.target.classList.contains('dropzone') && dragged.draggable) {
         event.target.classList.add('dragover')
     }
 })
 
 document.addEventListener('dragleave', event => {
-    if (event.target.classList.contains('dropzone')) {
+    if (event.target.classList.contains('dropzone') && dragged.draggable) {
         event.target.classList.remove('dragover')
     }
 })
@@ -28,7 +28,7 @@ document.addEventListener('dragleave', event => {
 document.addEventListener('drop', event => {
     event.preventDefault()
 
-    if (event.target.classList.contains('dropzone')) {
+    if (event.target.classList.contains('dropzone') && dragged.draggable) {
         event.target.classList.remove('dragover')
         dragged.parentNode.removeChild(dragged)
         event.target.appendChild(dragged)

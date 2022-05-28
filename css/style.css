@@ -28,7 +28,7 @@
 }
 header{
     font-weight: 600;
-    margin-bottom: 64px;
+    margin-bottom: 24px;
 }
 
 body{
@@ -39,24 +39,18 @@ body{
 .stripe-task {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-top: 22px;
-    min-height: 56px;
+    justify-content: space-between;
+    background: var(--light-card-background);
+    width: 100%;
+    padding: 16px;
+    box-shadow: 0px 0px 16px rgba(190, 224, 250, 0.75);
 }
 
 .stripe-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--light-card-background);
-    width: 50%;
-    box-shadow: 0px 0px 16px rgba(190, 224, 250, 0.75);
-    border-radius: 50px 0px 0px 50px;
-}
-
-.stripe-title h2{
     font-size: 24px;
-    margin-left: 28px;
 }
 
 .button-add-task {
@@ -65,15 +59,15 @@ body{
     justify-content: center;
     background: var(--primary-action-color);
     color: var(--cor--text-white);
-    border-radius: 0px 50px 50px 0px;    
-    width: 150px;
+    border-radius: 25px;    
+    width: 250px;
+    padding: 16px;
     text-align: center;
     transition: color .4s ease-in-out, box-shadow .3s ease-in-out
-
 }
 
 .button-add-task:hover{
-    box-shadow: inset 150px 0 0 0 #959595;
+    box-shadow: inset 250px 0 0 0 #959595;
     cursor: pointer;
 }
 
@@ -89,4 +83,35 @@ body{
 
 .width-min{
     min-width: 356px !important;
+}
+
+.floating-button-add-task {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .stripe-task {
+        justify-content: center;
+    }
+
+    .floating-button-add-task{
+        display: block;
+        background: var(--primary-action-color);
+        color: var(--cor--text-white);
+        border-radius: 100%;
+        position: fixed;
+        font-size: 40px;
+        padding: 8px 16px;
+        bottom: 24px;
+        right: 24px;
+    }
+
+    .button-add-task {
+        display: none;
+    }
+
+    .button-add-task:hover{
+        box-shadow: inset 48px 0 0 0 #959595;
+        cursor: pointer;
+    }
 }

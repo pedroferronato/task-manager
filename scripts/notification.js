@@ -1,9 +1,9 @@
 const taskcalled = new Set()
-const modalNotication = document.getElementById("modal-notification")
-const modalNoticationBody = document.getElementById("modal-notification-boby")
-const closeIconNotication = document.getElementById('modal-notificaion-close-icon')
+const modalNotification = document.getElementById("modal-notification")
+const modalNotificationBody = document.getElementById("modal-notification-boby")
+const closeIconNotification = document.getElementById('modal-notification-close-icon')
 
-closeIconNotication.addEventListener('click', chargeClass)
+closeIconNotification.addEventListener('click', chargeClass)
 
 function getTodayTask() {
     const allTasks = JSON.parse(localStorage.tasks)
@@ -18,31 +18,26 @@ function getTodayTask() {
                 tasks.push(task)
             }
         }
-    });
+    })
     return tasks
 }
 
 function getTimeTasks(payload) {
     const tasks = []
-
     payload.forEach(task => {
-        if (new Date(task.date).getUTCHours() === new Date().getUTCHours()) {
+        let checkMilliseconds = task.date - 600000
 
-            let checkMinutes = new Date(task.date).getUTCMinutes() - 10
-
-
-            if (checkMinutes === new Date().getUTCMinutes()) {
-                tasks.push(task)
-            }
+        if (checkMilliseconds === new Date().setSeconds(0, 0)) {
+            tasks.push(task)
         }
     })
-
     return tasks
 }
 
-function createTaskCardElement(task) {
+function createTaskCardElementNotification(task) {
     const taskCardElement = document.createElement('div')
     taskCardElement.classList.add('task-card')
+    taskCardElement.classList.add('margin-bottom-0px')
     taskCardElement.id = task.id
     taskCardElement.draggable = true
 
@@ -66,50 +61,38 @@ function createTaskCardElement(task) {
 }
 
 async function notificationTask() {
-    // create and show the notification
-    const showNotification = (_callback) => {
-        // create a new notification
+    const showNotification = () => {
         const notification = new Notification('Gerenciador de tarefas', {
             body: 'Há tarefas proximas de expirar. Clique aqui e confira.'
-        });
-
-        // close the notification after 10 seconds
+        })
         setTimeout(() => {
-            notification.close();
-        }, 10 * 1000);
-
-        // navigate to a URL when clicked
+            notification.close()
+        }, 10 * 1000)
         notification.addEventListener('click', () => {
-
-            window.open('http://127.0.0.1:5500/', '_blank');
-        });
+            window.open('http://127.0.0.1:5500/', '_blank')
+        })
     }
 
     // show an error message
     const showError = () => {
-        const error = document.querySelector('.error');
-        error.style.display = 'block';
-        error.textContent = 'You blocked the notifications';
+        const error = document.querySelector('.error')
+        error.style.display = 'block'
+        error.textContent = 'You blocked the notifications'
     }
 
-    // check notification permission
-    let granted = false;
-
+    let granted = false
     if (Notification.permission === 'granted') {
-        granted = true;
+        granted = true
     } else if (Notification.permission !== 'denied') {
-        let permission = await Notification.requestPermission();
-        granted = permission === 'granted' ? true : false;
+        let permission = await Notification.requestPermission()
+        granted = permission === 'granted' ? true : false
     }
+    granted ? showNotification() : showError()
 
-    // show notification or error
-    granted ? showNotification() : showError();
-
-};
+}
 
 function chargeClass() {
-
-    if (modalNotication.classList.contains('modal-invisible')) {
+    if (modalNotification.classList.contains('modal-invisible')) {
         switchClassN('modal-invisible', 'modal-visible')
     } else {
         switchClassN('modal-visible', 'modal-invisible')
@@ -117,36 +100,34 @@ function chargeClass() {
 }
 
 function switchClassN(oldClass, newClass) {
-    modalNotication.classList.remove(oldClass)
-    modalNotication.classList.add(newClass)
+    modalNotification.classList.remove(oldClass)
+    modalNotification.classList.add(newClass)
 }
 
 function alertTask() {
     const tasks = getTimeTasks(getTodayTask())
-
     tasks.forEach(task => {
         if (!taskcalled.has(task.id)) {
             chargeClass()
             task.date = formatDate(task.date)
-            const taskElement = createTaskCardElement(task)
+            const taskElement = createTaskCardElementNotification(task)
 
             if (task.state === "planned") {
-                modalNoticationBody.classList.add('border-planned')
-                modalNoticationBody.appendChild(taskElement)
+                modalNotificationBody.classList.add('border-planned')
+                modalNotificationBody.appendChild(taskElement)
             }
             if (task.state === "doing") {
-                modalNoticationBody.classList.add('border-doing')
-                modalNoticationBody.appendChild(taskElement)
+                modalNotificationBody.classList.add('border-doing')
+                modalNotificationBody.appendChild(taskElement)
             }
             if (task.state === "review") {
-                modalNoticationBody.classList.add('border-review')
-                modalNoticationBody.appendChild(taskElement)
+                modalNotificationBody.classList.add('border-review')
+                modalNotificationBody.appendChild(taskElement)
             }
             notificationTask()
             taskcalled.add(task.id)
         }
     })
-
 }
 
-setInterval(alertTask, 10000)
+setInterval(alertTask, 60*1000)
